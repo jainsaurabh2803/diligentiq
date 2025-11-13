@@ -17,9 +17,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onClick }) => {
   return (
     <div 
       onClick={onClick} 
-      className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-brand-gray-100 flex flex-col"
+      className="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-brand-gray-100 flex flex-col"
     >
-      <div className="flex-shrink-0 mb-4 bg-brand-blue/10 p-4 rounded-full w-16 h-16 flex items-center justify-center">
+      <div className="flex-shrink-0 mb-4 bg-brand-blue/10 p-4 rounded-full w-16 h-16 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-gold/20">
         {service.icon}
       </div>
       <div className="flex-grow">

@@ -19,3 +19,9 @@ export interface Company {
     logoUrl: string;
     website: string;
 }
+
+export interface Testimonial {
+  name: string;
+  title: string;
+  imageUrl: string;
+}

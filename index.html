@@ -24,7 +24,16 @@
                 '700': '#343a40',
                 '800': '#212529',
               }
-            }
+            },
+            animation: {
+              scroll: 'scroll 60s linear infinite',
+            },
+            keyframes: {
+              scroll: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(calc(-384px * 6 - 2rem * 6))' }, // Card width * num cards + margin * num cards
+              },
+            },
           }
         }
       }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { type ServiceCategory, type Company } from './types';
+import { type ServiceCategory, type Testimonial } from './types';
 
 const DocumentChartBarIcon: React.FC<{className?: string}> = ({className}) => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
@@ -109,35 +109,35 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
   },
 ];
 
-export const TRUSTED_COMPANIES: Company[] = [
-  { 
-    name: 'Frozen Bottle', 
-    logoUrl: 'https://frozenbottlefranchise.in/wp-content/uploads/2022/10/logo-dark.png',
-    website: 'https://frozenbottle.com/'
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    name: 'Pranshul Yadav',
+    title: 'CEO, Frozen Bottle',
+    imageUrl: 'https://i.pravatar.cc/150?u=aditya_sharma',
   },
-  { 
-    name: 'Khare.ai', 
-    logoUrl: 'https://khareclasses.com/wp-content/uploads/2023/04/khare-logo.png',
-    website: 'https://khareclasses.com/'
+  {
+    name: 'Arun Bhatia',
+    title: 'Founder, MedPay',
+    imageUrl: 'https://i.pravatar.cc/150?u=priya_mehta',
   },
-  { 
-    name: 'MedPay', 
-    logoUrl: 'https://www.medpay.in/assets/images/medpay_logo.svg',
-    website: 'https://www.medpay.in/'
+  {
+    name: 'Aseem khare',
+    title: 'CEO, Khare.ai',
+    imageUrl: 'kkhare.jpg',
   },
-  { 
-    name: 'Kling Breweries', 
-    logoUrl: 'https://klingbreweries.com/images/logo.png',
-    website: 'https://klingbreweries.com/'
+  {
+    name: 'Sneha Rao',
+    title: 'klingbreweries',
+    imageUrl: 'https://i.pravatar.cc/150?u=sneha_rao',
   },
-  { 
-    name: 'Evening Flavors', 
-    logoUrl: 'https://scontent.fhyd11-2.fna.fbcdn.net/v/t39.30808-1/325779344_567924375253896_5729792078696752718_n.jpg?stp=dst-jpg_p200x200&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=2N0zG4F5z_AQ7kNvgFvD16v&_nc_ht=scontent.fhyd11-2.fna&oh=00_AYC2q0z4W6J-L5f-qYl8b7k8L88Q51y8x7lF923yq7l7wQ&oe=666113A6',
-    website: 'https://www.facebook.com/EveningFlavors.India/'
+  {
+    name: 'Arjun Desai',
+    title: 'EveningFlavors',
+    imageUrl: 'https://www.facebook.com/photo/?fbid=508020454837061&set=a.508020428170397',
   },
-  { 
-    name: 'Tripver', 
-    logoUrl: 'https://tripver.com/wp-content/uploads/2022/07/Tripver-Logo-White-BG.png',
-    website: 'https://tripver.com/'
-  },
+  {
+    name: 'Kavita Singh',
+    title: 'Lead Investor, tripver',
+    imageUrl: 'https://i.pravatar.cc/150?u=kavita_singh',
+  }
 ];
