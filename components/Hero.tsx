@@ -27,6 +27,14 @@ const Hero: React.FC = () => {
               <CheckIcon className="h-6 w-6 text-brand-gold mr-2" />
               <span>MIS Reporting</span>
             </div>
+             <div className="flex items-center">
+              <CheckIcon className="h-6 w-6 text-brand-gold mr-2" />
+              <span>Tax Report</span>
+            </div>
+             <div className="flex items-center">
+              <CheckIcon className="h-6 w-6 text-brand-gold mr-2" />
+              <span>Secretarial</span>
+            </div>
           </div>
           <a href="#contact" className="bg-brand-gold text-white font-bold py-3 px-10 text-lg rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:scale-105 shadow-lg">
             Claim Offer Now
