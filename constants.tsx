@@ -113,12 +113,12 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     name: 'Pranshul Yadav',
     title: 'CEO, Frozen Bottle',
-    imageUrl: 'https://i.pravatar.cc/150?u=aditya_sharma',
+    imageUrl: 'frozenbottle.jpg',
   },
   {
     name: 'Arun Bhatia',
     title: 'Founder, MedPay',
-    imageUrl: 'https://i.pravatar.cc/150?u=priya_mehta',
+    imageUrl: 'medpay.png',
   },
   {
     name: 'Aseem khare',
@@ -128,15 +128,15 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     name: 'Sneha Rao',
     title: 'klingbreweries',
-    imageUrl: 'https://i.pravatar.cc/150?u=sneha_rao',
+    imageUrl: 'kling.jpg',
   },
   {
-    name: 'Arjun Desai',
+    name: '',
     title: 'EveningFlavors',
-    imageUrl: 'https://www.facebook.com/photo/?fbid=508020454837061&set=a.508020428170397',
+    imageUrl: 'eveningflavor.png',
   },
   {
-    name: 'Kavita Singh',
+    name: '',
     title: 'Lead Investor, tripver',
     imageUrl: 'https://i.pravatar.cc/150?u=kavita_singh',
   }
