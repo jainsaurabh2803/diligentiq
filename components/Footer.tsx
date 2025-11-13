@@ -6,9 +6,9 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <h4 className="text-xl font-bold text-white mb-4">diligentIQ</h4>
+            <h4 className="text-xl font-bold text-white mb-4">diligent-capitals</h4>
             <p className="pr-8">
-              diligentIQ is a premier provider of corporate legal and financial services, dedicated to helping businesses navigate complex regulatory landscapes with ease and confidence. Our expert team offers tailored solutions to ensure your company's success and compliance.
+              diligent-capitals is a premier provider of corporate legal and financial services, dedicated to helping businesses navigate complex regulatory landscapes with ease and confidence. Our expert team offers tailored solutions to ensure your company's success and compliance.
             </p>
             <div className="mt-6">
               <h5 className="text-lg font-semibold text-white mb-3">Our Founders</h5>
@@ -44,12 +44,12 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">Contact Details</h4>
             <p className="mb-2">Prestige Fern Residency<br/>Bangalore, India</p>
-            <p className="mb-2">Email: <a href="mailto:navneetagarwal511@gmail.com" className="hover:text-brand-gold transition-colors">navneetagarwal511@gmail.com</a></p>
+            <p className="mb-2">Email: <a href="mailto:support@diligent-capitals.com" className="hover:text-brand-gold transition-colors">support@diligent-capitals.com</a></p>
             <p>Phone: <a href="tel:+919916026616" className="hover:text-brand-gold transition-colors">+91-9916026616</a></p>
           </div>
         </div>
         <div className="mt-10 pt-8 border-t border-brand-gray-700 text-center text-brand-gray-400">
-          <p>&copy; {new Date().getFullYear()} diligentIQ. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} diligent-capitals. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

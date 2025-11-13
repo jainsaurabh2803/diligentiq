@@ -5,7 +5,7 @@ const Header: React.FC = () => {
     <header className="bg-white shadow-md sticky top-0 z-40">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="text-2xl font-bold text-brand-blue">
-          <a href="#">diligentIQ</a>
+          <a href="#">diligent-capitals</a>
         </div>
         <nav className="hidden md:flex space-x-8 items-center">
           <a href="#services" className="text-brand-gray-600 hover:text-brand-blue transition duration-300">Services</a>

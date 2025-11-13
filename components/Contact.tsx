@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
-    const subject = `New Inquiry from diligentIQ Website - ${formData.name}`;
+    const subject = `New Inquiry from diligent-capitals Website - ${formData.name}`;
     const body = `
 You have received a new inquiry from your website.
 
@@ -36,7 +36,7 @@ Message:
 ${formData.message}
     `.trim().replace(/\n +/g, '\n');
 
-    const mailtoLink = `mailto:jainsaurabh1995@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:support@diligent-capitals.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     
     window.location.href = mailtoLink;
   };
