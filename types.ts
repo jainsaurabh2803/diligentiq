@@ -25,3 +25,8 @@ export interface Testimonial {
   title: string;
   imageUrl: string;
 }
+
+export interface User {
+  name: string;
+  email: string;
+}

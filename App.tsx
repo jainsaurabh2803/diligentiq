@@ -6,25 +6,55 @@ import Contact from './components/Contact';
 import TrustedBy from './components/TrustedBy';
 import Footer from './components/Footer';
 import ServiceModal from './components/ServiceModal';
-import { type Service } from './types';
+import AuthModal from './components/AuthModal';
+import { type Service, type User } from './types';
 import { SERVICE_CATEGORIES } from './constants';
 
 const App: React.FC = () => {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [user, setUser] = useState<User | null>(null);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<'login' | 'signup'>('login');
 
   const handleServiceClick = useCallback((service: Service) => {
     setSelectedService(service);
   }, []);
 
-  const closeModal = useCallback(() => {
+  const closeServiceModal = useCallback(() => {
     setSelectedService(null);
   }, []);
-  
-  const allServices = SERVICE_CATEGORIES.flatMap(category => category.services);
+
+  // Auth Handlers
+  const openLogin = useCallback(() => {
+    setAuthMode('login');
+    setIsAuthModalOpen(true);
+  }, []);
+
+  const openSignup = useCallback(() => {
+    setAuthMode('signup');
+    setIsAuthModalOpen(true);
+  }, []);
+
+  const closeAuthModal = useCallback(() => {
+    setIsAuthModalOpen(false);
+  }, []);
+
+  const handleAuthSuccess = useCallback((loggedInUser: User) => {
+    setUser(loggedInUser);
+  }, []);
+
+  const handleLogout = useCallback(() => {
+    setUser(null);
+  }, []);
   
   return (
     <div className="bg-brand-gray-50 min-h-screen font-sans text-brand-gray-800">
-      <Header />
+      <Header 
+        user={user}
+        onLoginClick={openLogin}
+        onSignupClick={openSignup}
+        onLogoutClick={handleLogout}
+      />
       <main>
         <Hero />
         <Services onServiceClick={handleServiceClick} />
@@ -33,8 +63,14 @@ const App: React.FC = () => {
       </main>
       <Footer />
       {selectedService && (
-        <ServiceModal service={selectedService} onClose={closeModal} />
+        <ServiceModal service={selectedService} onClose={closeServiceModal} />
       )}
+      <AuthModal 
+        isOpen={isAuthModalOpen}
+        initialMode={authMode}
+        onClose={closeAuthModal}
+        onAuthSuccess={handleAuthSuccess}
+      />
     </div>
   );
 };
