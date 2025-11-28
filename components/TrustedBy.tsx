@@ -2,38 +2,56 @@ import React from 'react';
 import { TESTIMONIALS } from '../constants';
 
 const TrustedBy: React.FC = () => {
-  const duplicatedTestimonials = [...TESTIMONIALS, ...TESTIMONIALS];
-
   return (
-    <section className="py-16 sm:py-24 bg-brand-gray-50">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-brand-blue">Trusted By Industry Leaders</h2>
-            <p className="mt-4 text-lg text-brand-gray-600 max-w-3xl mx-auto">
-                We are proud to partner with innovative companies and startups across industries.
+    <section
+      id="trusted-by"
+      className="py-12 md:py-14 bg-white border-t border-brand-gray-100"
+    >
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+          <div>
+            <p className="text-xs font-semibold tracking-[0.25em] uppercase text-brand-blue mb-3">
+              TRUSTED BY
             </p>
-            <div className="mt-4 w-24 h-1 bg-brand-gold mx-auto rounded-full"></div>
+            <h2 className="text-xl md:text-2xl font-semibold text-brand-blue-dark">
+              Operators &amp; investors across consumer, healthcare and SaaS.
+            </h2>
+            <p className="text-sm text-brand-gray-600 mt-2 max-w-xl">
+              We have worked with founders and investors across food &amp; beverage,
+              healthcare, SaaS and hospitality – supporting both fund-raises and
+              buy-side transactions.
+            </p>
+          </div>
         </div>
 
-        <div 
-          className="relative w-full overflow-hidden"
-          style={{ maskImage: "linear-gradient(to right, transparent, white 10%, white 90%, transparent)" }}
-        >
-          <div className="flex w-max animate-scroll hover:[animation-play-state:paused]">
-            {duplicatedTestimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-lg text-center flex flex-col items-center justify-center mx-4 w-96 flex-shrink-0 h-64">
-                <img 
-                  src={testimonial.imageUrl} 
-                  alt={`Photo of ${testimonial.name}`}
-                  className="w-28 h-28 rounded-full object-cover mb-6 border-4 border-brand-gold/30 shadow-md"
-                />
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6 items-center">
+          {TESTIMONIALS.map((t) => {
+            const src = t.imageUrl.startsWith('http')
+              ? t.imageUrl
+              : `/${t.imageUrl}`;
+            return (
+              <div
+                key={`${t.name}-${t.title}`}
+                className="flex flex-col items-center text-center gap-2"
+              >
+                <div className="h-16 w-24 md:h-20 md:w-28 flex items-center justify-center bg-brand-gray-100 rounded-lg overflow-hidden">
+                  <img
+                    src={src}
+                    alt={t.title}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
                 <div>
-                  <p className="font-bold text-brand-blue-dark text-lg">{testimonial.name}</p>
-                  <p className="text-brand-gray-500">{testimonial.title}</p>
+                  {t.name && (
+                    <p className="text-xs font-semibold text-brand-blue-dark">
+                      {t.name}
+                    </p>
+                  )}
+                  <p className="text-[11px] text-brand-gray-500">{t.title}</p>
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>

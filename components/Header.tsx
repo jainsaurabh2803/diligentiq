@@ -1,57 +1,41 @@
 import React from 'react';
-import { type User } from '../types';
 
-interface HeaderProps {
-  user: User | null;
-  onLoginClick: () => void;
-  onSignupClick: () => void;
-  onLogoutClick: () => void;
-}
-
-const Header: React.FC<HeaderProps> = ({ user, onLoginClick, onSignupClick, onLogoutClick }) => {
+const Header: React.FC = () => {
   return (
-    <header className="bg-white shadow-md sticky top-0 z-40">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="text-2xl font-bold text-brand-blue">
-          <a href="#">diligent-capitals</a>
-        </div>
-        <nav className="hidden md:flex space-x-8 items-center">
-          <a href="#services" className="text-brand-gray-600 hover:text-brand-blue transition duration-300">Services</a>
-          <a href="#contact" className="text-brand-gray-600 hover:text-brand-blue transition duration-300">Contact</a>
-          <a href="#about" className="text-brand-gray-600 hover:text-brand-blue transition duration-300">About</a>
-        </nav>
-        
-        <div className="flex items-center space-x-4">
-          {user ? (
-             <div className="flex items-center space-x-4">
-                <span className="hidden sm:inline text-brand-gray-700 font-medium">Welcome, {user.name}</span>
-                <button 
-                  onClick={onLogoutClick}
-                  className="text-brand-blue hover:text-brand-blue-dark font-medium transition duration-300 border border-brand-blue px-4 py-2 rounded-lg hover:bg-brand-blue hover:text-white"
-                >
-                  Logout
-                </button>
-             </div>
-          ) : (
-            <>
-              <button 
-                onClick={onLoginClick}
-                className="text-brand-blue hover:text-brand-blue-dark font-medium transition duration-300 hidden sm:block"
-              >
-                Log in
-              </button>
-              <button 
-                onClick={onSignupClick}
-                className="bg-brand-blue text-white font-bold py-2 px-6 rounded-lg hover:bg-brand-blue-dark transition duration-300 shadow-sm"
-              >
-                Sign Up
-              </button>
-            </>
-          )}
-          <a href="#contact" className="hidden lg:inline-block bg-brand-gold text-white font-bold py-2 px-6 rounded-lg hover:bg-opacity-90 transition duration-300 shadow-sm">
-            Get Started
+    <header className="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-brand-gray-100">
+      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="#top" className="flex items-center gap-2">
+          <div className="h-9 w-9 rounded-full bg-brand-blue flex items-center justify-center text-white font-bold text-lg">
+            D
+          </div>
+          <div className="leading-tight">
+            <div className="font-semibold text-brand-blue-dark">
+              Diligent Capitals
+            </div>
+            <div className="text-xs text-brand-gray-500">
+              Corporate Diligence &amp; Legal Services
+            </div>
+          </div>
+        </a>
+
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-brand-gray-600">
+          <a href="#services" className="hover:text-brand-blue-dark">
+            Services
           </a>
-        </div>
+          <a href="#trusted-by" className="hover:text-brand-blue-dark">
+            Trusted by
+          </a>
+          <a href="#contact" className="hover:text-brand-blue-dark">
+            Contact
+          </a>
+        </nav>
+
+        <a
+          href="#contact"
+          className="hidden md:inline-flex items-center rounded-full border border-brand-blue bg-brand-blue text-white text-sm font-semibold px-4 py-2 hover:bg-brand-blue-dark transition"
+        >
+          Schedule a call
+        </a>
       </div>
     </header>
   );

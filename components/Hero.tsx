@@ -1,44 +1,48 @@
 import React from 'react';
 
-const CheckIcon: React.FC<{className?: string}> = ({className}) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className={className}>
-        <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.052-.143z" clipRule="evenodd" />
-    </svg>
-);
-
 const Hero: React.FC = () => {
   return (
-    <section className="bg-brand-blue text-white" style={{backgroundImage: "linear-gradient(rgba(15, 76, 129, 0.85), rgba(15, 76, 129, 0.85)), url('https://picsum.photos/1600/800?grayscale&blur=2')"}}>
-      <div className="container mx-auto px-6 py-20 text-center">
-        <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl inline-block border border-white/20 shadow-xl">
-          <h2 className="text-sm font-bold uppercase tracking-widest text-brand-gold">Special Offer</h2>
-          <h1 className="text-4xl md:text-5xl font-extrabold mt-2 mb-4 leading-tight">Due Diligence Snapshot</h1>
-          <p className="text-3xl md:text-4xl font-bold text-brand-gold mb-6">For just ₹2499</p>
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8 text-lg mb-8">
-            <div className="flex items-center">
-              <CheckIcon className="h-6 w-6 text-brand-gold mr-2" />
-              <span>Financial Analysis</span>
-            </div>
-            <div className="flex items-center">
-              <CheckIcon className="h-6 w-6 text-brand-gold mr-2" />
-              <span>User Cohort Analysis</span>
-            </div>
-            <div className="flex items-center">
-              <CheckIcon className="h-6 w-6 text-brand-gold mr-2" />
-              <span>MIS Reporting</span>
-            </div>
-             <div className="flex items-center">
-              <CheckIcon className="h-6 w-6 text-brand-gold mr-2" />
-              <span>Tax Report</span>
-            </div>
-             <div className="flex items-center">
-              <CheckIcon className="h-6 w-6 text-brand-gold mr-2" />
-              <span>Secretarial</span>
-            </div>
+    <section
+      className="relative overflow-hidden bg-brand-blue text-white"
+      aria-labelledby="hero-heading"
+    >
+      <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-brand-gold via-white to-brand-blue-dark pointer-events-none" />
+      <div className="max-w-6xl mx-auto px-4 py-16 md:py-20 relative">
+        <div className="max-w-2xl">
+          <p className="text-xs font-semibold tracking-[0.25em] uppercase text-brand-gold mb-4">
+            INVESTOR-FIRST DILIGENCE
+          </p>
+          <h1
+            id="hero-heading"
+            className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-4"
+          >
+            Clear, actionable due diligence for every transaction.
+          </h1>
+          <p className="text-sm md:text-base text-brand-gray-100/80 mb-6 md:mb-8">
+            We combine structured analytics, MIS review and pragmatic legal checks
+            to build a single, investor-friendly view of your target company –
+            without drowning you in jargon.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
+            <a
+              href="#contact"
+              className="inline-flex justify-center items-center px-5 py-2.5 rounded-full bg-brand-gold text-brand-blue-dark text-sm font-semibold shadow-sm hover:bg-amber-300 transition"
+            >
+              Book a 30-min discovery call
+            </a>
+            <a
+              href="#services"
+              className="inline-flex justify-center items-center px-5 py-2.5 rounded-full border border-white/40 text-sm font-semibold text-white/90 hover:bg-white/10 transition"
+            >
+              View diligence offerings
+            </a>
           </div>
-          <a href="#contact" className="bg-brand-gold text-white font-bold py-3 px-10 text-lg rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:scale-105 shadow-lg">
-            Claim Offer Now
-          </a>
+
+          <p className="mt-6 text-xs text-brand-gray-100/70">
+            Backed by 6+ years of analytics &amp; transaction experience across
+            SaaS, consumer and healthcare.
+          </p>
         </div>
       </div>
     </section>
