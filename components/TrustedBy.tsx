@@ -1,5 +1,32 @@
 import React from 'react';
-import { TESTIMONIALS } from '../constants';
+
+const LOGOS = [
+  {
+    name: 'Frozen Bottle',
+    title: 'Frozen Bottle',
+    src: '/frozenbottle.jpeg',
+  },
+  {
+    name: 'MedPay',
+    title: 'MedPay',
+    src: '/medpay.jpeg',
+  },
+  {
+    name: 'Khare.ai',
+    title: 'Khare.ai',
+    src: '/khare.jpeg',
+  },
+  {
+    name: 'Kling Breweries',
+    title: 'Kling Breweries',
+    src: '/kling.jpeg',
+  },
+  {
+    name: 'Evening Flavors',
+    title: 'Evening Flavors',
+    src: '/eveningflavor.jpeg',
+  },
+];
 
 const TrustedBy: React.FC = () => {
   return (
@@ -17,41 +44,36 @@ const TrustedBy: React.FC = () => {
               Operators &amp; investors across consumer, healthcare and SaaS.
             </h2>
             <p className="text-sm text-brand-gray-600 mt-2 max-w-xl">
-              We have worked with founders and investors across food &amp; beverage,
-              healthcare, SaaS and hospitality – supporting both fund-raises and
-              buy-side transactions.
+              We have worked with founders and investors across food &amp;
+              beverage, healthcare, SaaS and hospitality – supporting both
+              fund-raises and buy-side transactions.
             </p>
           </div>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6 items-center">
-          {TESTIMONIALS.map((t) => {
-            const src = t.imageUrl.startsWith('http')
-              ? t.imageUrl
-              : `/${t.imageUrl}`;
-            return (
-              <div
-                key={`${t.name}-${t.title}`}
-                className="flex flex-col items-center text-center gap-2"
-              >
-                <div className="h-16 w-24 md:h-20 md:w-28 flex items-center justify-center bg-brand-gray-100 rounded-lg overflow-hidden">
-                  <img
-                    src={src}
-                    alt={t.title}
-                    className="max-h-full max-w-full object-contain"
-                  />
-                </div>
-                <div>
-                  {t.name && (
-                    <p className="text-xs font-semibold text-brand-blue-dark">
-                      {t.name}
-                    </p>
-                  )}
-                  <p className="text-[11px] text-brand-gray-500">{t.title}</p>
-                </div>
+          {LOGOS.map((logo) => (
+            <div
+              key={logo.title}
+              className="flex flex-col items-center text-center gap-2"
+            >
+              <div className="h-16 w-24 md:h-20 md:w-28 flex items-center justify-center bg-brand-gray-100 rounded-lg overflow-hidden">
+                <img
+                  src={logo.src}
+                  alt={logo.title}
+                  className="max-h-full max-w-full object-contain"
+                />
               </div>
-            );
-          })}
+              <div>
+                <p className="text-xs font-semibold text-brand-blue-dark">
+                  {logo.name}
+                </p>
+                <p className="text-[11px] text-brand-gray-500">
+                  {logo.title}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
