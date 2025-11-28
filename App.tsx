@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -8,13 +8,42 @@ import Footer from './components/Footer';
 import ServiceModal from './components/ServiceModal';
 import AuthModal from './components/AuthModal';
 import { type Service, type User } from './types';
-import { SERVICE_CATEGORIES } from './constants';
+import { supabase } from './utils/supabaseClient';
 
 const App: React.FC = () => {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [user, setUser] = useState<User | null>(null);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState<'login' | 'signup'>('login');
+
+  // Initialize Auth State
+  useEffect(() => {
+    // Check active session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session?.user) {
+        setUser({
+          name: session.user.user_metadata.name || session.user.email?.split('@')[0] || 'User',
+          email: session.user.email || '',
+        });
+      }
+    });
+
+    // Listen for changes (login, logout, signup)
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (session?.user) {
+        setUser({
+          name: session.user.user_metadata.name || session.user.email?.split('@')[0] || 'User',
+          email: session.user.email || '',
+        });
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
 
   const handleServiceClick = useCallback((service: Service) => {
     setSelectedService(service);
@@ -39,11 +68,8 @@ const App: React.FC = () => {
     setIsAuthModalOpen(false);
   }, []);
 
-  const handleAuthSuccess = useCallback((loggedInUser: User) => {
-    setUser(loggedInUser);
-  }, []);
-
-  const handleLogout = useCallback(() => {
+  const handleLogout = useCallback(async () => {
+    await supabase.auth.signOut();
     setUser(null);
   }, []);
   
@@ -69,7 +95,6 @@ const App: React.FC = () => {
         isOpen={isAuthModalOpen}
         initialMode={authMode}
         onClose={closeAuthModal}
-        onAuthSuccess={handleAuthSuccess}
       />
     </div>
   );

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { type User } from '../types';
+import { supabase } from '../utils/supabaseClient';
 
 interface AuthModalProps {
   isOpen: boolean;
   initialMode: 'login' | 'signup';
   onClose: () => void;
-  onAuthSuccess: (user: User) => void;
 }
 
 const XMarkIcon: React.FC<{className?: string}> = ({className}) => (
@@ -14,7 +13,7 @@ const XMarkIcon: React.FC<{className?: string}> = ({className}) => (
     </svg>
 );
 
-const AuthModal: React.FC<AuthModalProps> = ({ isOpen, initialMode, onClose, onAuthSuccess }) => {
+const AuthModal: React.FC<AuthModalProps> = ({ isOpen, initialMode, onClose }) => {
   const [mode, setMode] = useState<'login' | 'signup'>(initialMode);
   const [formData, setFormData] = useState({
     name: '',
@@ -22,10 +21,15 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, initialMode, onClose, onA
     password: ''
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [successMsg, setSuccessMsg] = useState<string | null>(null);
 
   useEffect(() => {
     setMode(initialMode);
-  }, [initialMode]);
+    setErrorMsg(null);
+    setSuccessMsg(null);
+    setFormData({ name: '', email: '', password: '' });
+  }, [initialMode, isOpen]);
 
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
@@ -45,23 +49,45 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, initialMode, onClose, onA
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrorMsg(null); // Clear error on typing
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setErrorMsg(null);
+    setSuccessMsg(null);
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      if (mode === 'signup') {
+        const { error } = await supabase.auth.signUp({
+          email: formData.email,
+          password: formData.password,
+          options: {
+            data: {
+              name: formData.name,
+            },
+          },
+        });
+
+        if (error) throw error;
+        setSuccessMsg('Account created! You are now logged in.');
+        setTimeout(() => onClose(), 1500);
+
+      } else {
+        const { error } = await supabase.auth.signInWithPassword({
+          email: formData.email,
+          password: formData.password,
+        });
+
+        if (error) throw error;
+        onClose();
+      }
+    } catch (error: any) {
+      setErrorMsg(error.message || 'An unexpected error occurred');
+    } finally {
       setIsLoading(false);
-      // Mock success
-      const user: User = {
-        name: mode === 'signup' ? formData.name : (formData.email.split('@')[0] || 'User'),
-        email: formData.email
-      };
-      onAuthSuccess(user);
-      onClose();
-    }, 1500);
+    }
   };
 
   return (
@@ -101,6 +127,18 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, initialMode, onClose, onA
           </p>
         </div>
 
+        {errorMsg && (
+          <div className="mb-4 p-3 bg-red-100 text-red-700 text-sm rounded-lg">
+            {errorMsg}
+          </div>
+        )}
+        
+        {successMsg && (
+          <div className="mb-4 p-3 bg-green-100 text-green-700 text-sm rounded-lg">
+            {successMsg}
+          </div>
+        )}
+
         <form onSubmit={handleSubmit} className="space-y-4">
           {mode === 'signup' && (
             <div>
@@ -134,6 +172,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, initialMode, onClose, onA
               type="password"
               name="password"
               required
+              minLength={6}
               value={formData.password}
               onChange={handleChange}
               className="w-full px-4 py-2 border border-brand-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none"
