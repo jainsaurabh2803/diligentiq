@@ -22,10 +22,10 @@ const Contact: React.FC = () => {
           <p className="text-sm text-white/70">
             Prefer email? Write to{' '}
             <a
-              href="mailto:info@diligentcapitals.com"
+              href="mailto:support@diligentcapitals.com"
               className="underline underline-offset-2 decoration-brand-gold"
             >
-              info@diligentcapitals.com
+              support@diligentcapitals.com
             </a>
           </p>
         </div>
