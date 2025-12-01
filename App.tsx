@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -6,11 +8,11 @@ import Contact from './components/Contact';
 import TrustedBy from './components/TrustedBy';
 import Footer from './components/Footer';
 import ServiceModal from './components/ServiceModal';
+import AboutTeaser from './components/AboutTeaser';
+import AboutPage from './pages/About';
+
 import { SERVICE_CATEGORIES } from './constants';
 import type { Service } from './types';
-import AboutPage from './pages/About';
-import AboutTeaser from './components/AboutTeaser';
-import { Routes, Route } from 'react-router-dom';
 
 const Home: React.FC = () => {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
@@ -21,11 +23,14 @@ const Home: React.FC = () => {
       <main className="flex-1">
         <Hero />
         <AboutTeaser />
+        {/* Make sure Services section has id="services" inside */}
         <Services
           categories={SERVICE_CATEGORIES}
           onServiceClick={setSelectedService}
         />
+        {/* TrustedBy section should have id="trusted-by" */}
         <TrustedBy />
+        {/* Contact section should have id="contact" */}
         <Contact />
       </main>
       <Footer />
