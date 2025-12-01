@@ -1,11 +1,11 @@
 import React from 'react';
 
 const LOGOS = [
-  { name: 'Frozen Bottle', title: 'Frozen Bottle', src: '/frozenbottle.jpeg' },
-  { name: 'MedPay', title: 'MedPay', src: '/medpay.jpeg' },
-  { name: 'Khare.ai', title: 'Khare.ai', src: '/khare.jpeg' },
-  { name: 'Kling Breweries', title: 'Kling Breweries', src: '/kling.jpeg' },
-  { name: 'Evening Flavors', title: 'Evening Flavors', src: '/eveningflavor.jpeg' },
+  { name: 'Pranshul Yadav', title: 'Frozen Bottle', src: '/frozenbottle.jpeg' },
+  { name: 'Ravi Chandra', title: 'MedPay', src: '/medpay.jpeg' },
+  { name: 'Assem Khare', title: 'Khare.ai', src: '/khare.jpeg' },
+  { name: 'Kartik MN', title: 'Kling Breweries', src: '/kling.jpeg' },
+  { name: 'Aakash Shrivastav', title: 'Evening Flavors', src: '/eveningflavor.jpeg' },
 ];
 
 const TrustedBy: React.FC = () => {
