@@ -1,0 +1,163 @@
+.header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-list {
+    display: flex;
+    gap: var(--spacing-md);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-list a,
+.nav-list span {
+    font-weight: 500;
+    color: var(--color-dark);
+    cursor: pointer;
+    padding: 20px 10px;
+    /* Increased padding area for better hover */
+    display: block;
+    text-decoration: none;
+}
+
+.nav-list a:hover,
+.nav-list span:hover {
+    color: var(--color-secondary);
+}
+
+/* Mega Menu Styles */
+.dropdown {
+    position: static;
+    /* Static so absolute child is relative to header/viewport if needed, but we used relative before */
+}
+
+/* Trigger area needs to be consistent */
+.dropdown-trigger {
+    position: relative;
+}
+
+.mega-menu {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background-color: #0d0d25;
+    /* Dark blue background from reference */
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--color-primary);
+    padding: 40px 0;
+}
+
+/* Show Mega Menu on Hover of LI */
+.dropdown:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-menu-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.mega-title {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mega-links {
+    list-style: none;
+    padding: 0;
+}
+
+.mega-links li {
+    margin-bottom: 12px;
+}
+
+.mega-links a {
+    color: #a0a0b0;
+    /* Light grey text */
+    padding: 0;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+.mega-links a::before {
+    content: '»';
+    margin-right: 8px;
+    font-size: 1.2rem;
+    line-height: 1;
+    color: var(--color-secondary);
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: all 0.2s;
+}
+
+.mega-links a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+.mega-links a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(105, 88, 194, 0.4);
+}
