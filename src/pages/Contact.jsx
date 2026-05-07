@@ -33,6 +33,11 @@ const Contact = () => {
                         </div>
 
                         <div className="form-group">
+                            <label htmlFor="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="" />
+                        </div>
+
+                        <div className="form-group">
                             <label htmlFor="context">Deal context</label>
                             <textarea
                                 id="context"

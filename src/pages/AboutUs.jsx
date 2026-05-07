@@ -36,7 +36,7 @@ const AboutUs = () => {
                     <h2 className="text-center" style={{ marginBottom: '40px' }}>Our Founders</h2>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
                         <div style={{ background: 'white', padding: '40px', borderRadius: '8px', boxShadow: 'var(--shadow-card)' }}>
-                            <h3 className="text-primary" style={{ marginBottom: '4px' }}>Saurabh Jain</h3>
+                            <h3 className="text-primary" style={{ marginBottom: '4px' }}>Mitesh Agarwal</h3>
                             <p style={{ color: 'var(--color-dark)', fontWeight: 600, marginBottom: '8px' }}>Co-Founder</p>
                             <p style={{ color: 'var(--color-secondary)', fontWeight: 600, marginBottom: '12px' }}>10+ Years of Experience</p>
                             <p>Data Room, Analytics</p>
