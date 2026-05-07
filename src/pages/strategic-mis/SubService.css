@@ -6,7 +6,8 @@
 }
 
 .sub-service-header {
-    height: 60vh;
+    height: 38vh;
+    min-height: 280px;
     position: relative;
     background-color: var(--color-dark);
     color: white;

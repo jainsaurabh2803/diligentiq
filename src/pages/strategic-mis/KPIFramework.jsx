@@ -1,5 +1,7 @@
 import React from 'react';
 import './SubService.css';
+import kpiUniteconImg from '../../assets/kpi_unitecon.png';
+import kpiFunnelImg from '../../assets/kpi_funnel.png';
 
 const KPIFramework = () => {
     return (
@@ -30,8 +32,12 @@ const KPIFramework = () => {
                             </ul>
                         </div>
                         <div className="visual-content">
-                            <div style={{ height: '300px', background: '#fff0f5', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#cc3366' }}>
-                                [KPI Hierarchy Diagram]
+                            <div style={{ borderRadius: '8px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <img
+                                    src={kpiUniteconImg}
+                                    alt="KPI Hierarchy Diagram"
+                                    style={{ width: '100%', height: 'auto', maxHeight: '420px', objectFit: 'contain', display: 'block' }}
+                                />
                             </div>
                         </div>
                     </div>
@@ -41,8 +47,12 @@ const KPIFramework = () => {
                 <section className="detail-section">
                     <div className="content-grid">
                         <div className="visual-content">
-                            <div style={{ height: '300px', background: '#f0f8ff', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0066cc' }}>
-                                [SaaS Metrics Funnel]
+                            <div style={{ borderRadius: '8px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <img
+                                    src={kpiFunnelImg}
+                                    alt="SaaS Metrics Funnel"
+                                    style={{ width: '100%', height: 'auto', maxHeight: '420px', objectFit: 'contain', display: 'block' }}
+                                />
                             </div>
                         </div>
                         <div className="text-content">

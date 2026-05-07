@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import misInvestorImg from '../assets/mis_investor.png';
 
 const Home = () => {
     return (
@@ -17,13 +18,10 @@ const Home = () => {
                             We combine structured analytics, MIS review and pragmatic legal checks to build a single,
                             investor-friendly view of your target company – without drowning you in jargon.
                         </p>
-                        <div className="hero-buttons">
-                            <Link to="/contact" className="btn btn-primary">Book a 30-min discovery call</Link>
-                            <Link to="/services" className="btn btn-secondary" style={{ marginLeft: '1rem', background: 'transparent', border: '1px solid white', color: 'white' }}>View diligence offerings</Link>
-                        </div>
-                        <p className="hero-footer">
-                            Backed by 6+ years of analytics & transaction experience across SaaS, consumer and healthcare.
-                        </p>
+                    </div>
+                    <div className="hero-actions fade-in">
+                        <Link to="/contact" className="btn btn-primary">Book a 30-min discovery call</Link>
+                        <Link to="/services" className="btn btn-secondary" style={{ background: 'transparent', border: '1px solid white', color: 'white' }}>View diligence offerings</Link>
                     </div>
                 </div>
             </section>
@@ -76,8 +74,12 @@ const Home = () => {
                             </p>
                             <Link to="/about-us" className="btn btn-primary">Learn More About Us</Link>
                         </div>
-                        <div style={{ flex: 1, height: '300px', background: '#ddd', borderRadius: 'var(--border-radius)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <span style={{ color: '#888' }}>[Placeholder Image]</span>
+                        <div style={{ flex: 1, borderRadius: 'var(--border-radius)', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <img
+                                src={misInvestorImg}
+                                alt="About Diligent Capitals"
+                                style={{ width: '100%', height: 'auto', maxHeight: '420px', objectFit: 'contain', display: 'block' }}
+                            />
                         </div>
                     </div>
                 </div>

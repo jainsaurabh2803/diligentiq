@@ -67,3 +67,95 @@
     color: var(--color-secondary);
     font-weight: bold;
 }
+
+.service-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.service-overview-card {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-overview-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.service-card-image {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    display: block;
+    background: #f7f7fb;
+    padding: 20px;
+}
+
+.service-card-body {
+    padding: 28px;
+}
+
+.service-card-body h3 {
+    font-size: 1.4rem;
+    color: var(--color-dark);
+    margin-bottom: 14px;
+}
+
+.service-card-desc {
+    color: #555;
+    margin-bottom: 18px;
+    line-height: 1.7;
+}
+
+.service-card-list {
+    margin-bottom: 20px;
+}
+
+.service-overview-link {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.service-overview-link:hover {
+    color: var(--color-secondary);
+}
+
+.services-summary {
+    margin-top: 64px;
+    padding: 40px;
+    background: var(--color-bg-light);
+    border-radius: var(--border-radius);
+}
+
+.services-summary .section-title {
+    margin-bottom: 28px;
+}
+
+.services-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.services-summary-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 24px;
+    box-shadow: var(--shadow-card);
+}
+
+.services-summary-card h3 {
+    color: var(--color-dark);
+    margin-bottom: 12px;
+}
+
+.services-summary-card p {
+    color: #555;
+    line-height: 1.7;
+}

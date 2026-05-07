@@ -14,7 +14,8 @@ const Contact = () => {
                         We can share a relevant sample output and a time & fee estimate.
                     </p>
                     <div className="contact-email">
-                        <p>Prefer email? Write to <a href="mailto:support@diligentcapitals.com">support@diligentcapitals.com</a></p>
+                        <p>Prefer email? Write to <a href="mailto:navneetagarwal511@gmail.com">navneetagarwal511@gmail.com</a></p>
+                        <p>Or call us at <a href="tel:+919916026616">+91-9916026616</a> / <a href="tel:+917600889240">+91-7600889240</a></p>
                     </div>
                 </div>
 

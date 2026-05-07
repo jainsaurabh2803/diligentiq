@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
@@ -17,6 +16,7 @@ import MergerSlumpSale from './pages/transaction-regulatory/MergerSlumpSale';
 import StrategicAlliances from './pages/transaction-regulatory/StrategicAlliances';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
+import ServicesOverview from './pages/ServicesOverview';
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="services" element={<div className="container section"><h2>Services Overview</h2><p>Please select a specific service from the menu.</p></div>} />
+          <Route path="services" element={<ServicesOverview />} />
 
           {/* Specific Service Routes */}
           <Route path="services/transaction-regulatory-support" element={<TransactionRegulatory />} />

@@ -1,5 +1,7 @@
 import React from 'react';
 import './SubService.css';
+import misFinancialImg from '../../assets/mis_financial.png';
+import fundraisingInstrumentsImg from '../../assets/fundraising_instruments.png';
 
 const FinancialModelling = () => {
     return (
@@ -29,8 +31,12 @@ const FinancialModelling = () => {
                             </ul>
                         </div>
                         <div className="visual-content">
-                            <div style={{ height: '280px', background: '#e8f5e9', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#2e7d32' }}>
-                                [Scenario Waterfall Chart]
+                            <div style={{ borderRadius: '8px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <img
+                                    src={misFinancialImg}
+                                    alt="Scenario Waterfall Chart"
+                                    style={{ width: '100%', height: 'auto', maxHeight: '420px', objectFit: 'contain', display: 'block' }}
+                                />
                             </div>
                         </div>
                     </div>
@@ -39,8 +45,12 @@ const FinancialModelling = () => {
                 <section className="detail-section">
                     <div className="content-grid">
                         <div className="visual-content">
-                            <div style={{ height: '250px', background: '#fff8e1', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ff8f00' }}>
-                                [Valuation Model Output]
+                            <div style={{ borderRadius: '8px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <img
+                                    src={fundraisingInstrumentsImg}
+                                    alt="Valuation Model Output"
+                                    style={{ width: '100%', height: 'auto', maxHeight: '420px', objectFit: 'contain', display: 'block' }}
+                                />
                             </div>
                         </div>
                         <div className="text-content">
