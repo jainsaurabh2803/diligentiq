@@ -1,76 +1,142 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './AboutUs.css';
+import misInvestorImg from '../assets/mis_investor.png';
+
+const founders = [
+    {
+        name: 'Mitesh Agarwal',
+        role: 'Co-Founder',
+        experience: '10+ Years of Experience',
+        expertise: 'Data room strategy, analytics, and investor-facing diligence workflows.',
+    },
+    {
+        name: 'Navneet Agarwal',
+        role: 'Co-Founder',
+        experience: '15+ Years of Experience',
+        expertise: 'Legal, CA, CS, and regulatory execution across transactions and compliance.',
+    },
+];
+
+const differentiators = [
+    {
+        title: 'Investor-Focused',
+        text: 'We understand what investors need to evaluate, question, and close — so our output is structured for decisions, not just documentation.',
+    },
+    {
+        title: 'Fast Turnaround',
+        text: 'We work at transaction pace, helping teams move through diligence, reporting, and planning without unnecessary back-and-forth.',
+    },
+    {
+        title: 'Compliance First',
+        text: 'We bring legal, financial, and governance discipline into every engagement to reduce surprises and protect long-term value.',
+    },
+];
 
 const AboutUs = () => {
     return (
         <div className="about-page">
-            {/* Header Section */}
-            <section className="section" style={{ backgroundColor: 'var(--color-dark)', color: 'white', padding: '100px 0' }}>
-                <div className="container">
-                    <h1 style={{ fontSize: '3rem', marginBottom: '20px', color: 'white' }}>Who We Are</h1>
-                    <p style={{ fontSize: '1.2rem', maxWidth: '800px', opacity: '0.9' }}>
-                        Diligent Capitals is a premier corporate diligence and legal services firm.
-                        We bridge the gap between complex regulatory requirements and business growth.
-                    </p>
-                </div>
-            </section>
-
-            {/* Mission/Vision */}
-            <section className="section">
-                <div className="container">
-                    <div className="grid-3">
-                        <div style={{ background: 'white', padding: '40px', borderRadius: '8px', boxShadow: 'var(--shadow-card)' }}>
-                            <h2 className="text-primary">Our Mission</h2>
-                            <p>To provide clear, actionable insights that empower investors and founders to make informed decisions with confidence.</p>
+            <section className="about-hero section">
+                <div className="container about-shell">
+                    <div className="about-hero-card fade-in">
+                        <div className="about-hero-copy">
+                            <span className="about-kicker">ABOUT DILIGENT CAPITALS</span>
+                            <h1>Who we are, and how we help teams move with clarity.</h1>
+                            <p>
+                                Diligent Capitals is a corporate diligence and legal services firm built to bridge the gap
+                                between complex regulatory requirements, investor expectations, and business growth.
+                            </p>
+                            <div className="about-hero-tags">
+                                <span>Investor-first diligence</span>
+                                <span>Regulatory clarity</span>
+                                <span>Actionable reporting</span>
+                            </div>
                         </div>
-                        <div style={{ background: 'white', padding: '40px', borderRadius: '8px', boxShadow: 'var(--shadow-card)' }}>
-                            <h2 className="text-secondary">Our Vision</h2>
-                            <p>To be the most trusted partner for transaction advisory and regulatory compliance in the ecosystem.</p>
+
+                        <div className="about-hero-visual">
+                            <div className="about-hero-frame">
+                                <img src={misInvestorImg} alt="Diligent Capitals founders and investor support visual" />
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Our Founders */}
-            <section className="section">
-                <div className="container">
-                    <h2 className="text-center" style={{ marginBottom: '40px' }}>Our Founders</h2>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
-                        <div style={{ background: 'white', padding: '40px', borderRadius: '8px', boxShadow: 'var(--shadow-card)' }}>
-                            <h3 className="text-primary" style={{ marginBottom: '4px' }}>Mitesh Agarwal</h3>
-                            <p style={{ color: 'var(--color-dark)', fontWeight: 600, marginBottom: '8px' }}>Co-Founder</p>
-                            <p style={{ color: 'var(--color-secondary)', fontWeight: 600, marginBottom: '12px' }}>10+ Years of Experience</p>
-                            <p>Data Room, Analytics</p>
+            <section className="section about-story-section">
+                <div className="container about-shell">
+                    <div className="about-story-grid">
+                        <div className="about-story-card">
+                            <span className="about-section-kicker">OUR STORY</span>
+                            <h2>Built for transactions, diligence, and growth-stage execution.</h2>
+                            <p>
+                                We simplify complex financial, legal, and operational inputs into structured outputs that
+                                founders and investors can act on. Our work is designed to reduce noise, surface risks early,
+                                and improve confidence during critical business decisions.
+                            </p>
+                            <Link to="/contact" className="about-dark-btn">Talk to our team</Link>
                         </div>
-                        <div style={{ background: 'white', padding: '40px', borderRadius: '8px', boxShadow: 'var(--shadow-card)' }}>
-                            <h3 className="text-primary" style={{ marginBottom: '4px' }}>Navneet Agarwal</h3>
-                            <p style={{ color: 'var(--color-dark)', fontWeight: 600, marginBottom: '8px' }}>Co-Founder</p>
-                            <p style={{ color: 'var(--color-secondary)', fontWeight: 600, marginBottom: '12px' }}>15+ Years of Experience</p>
-                            <p>Legal, CA, CS</p>
+
+                        <div className="about-value-grid">
+                            <div className="about-value-card">
+                                <span className="about-section-kicker">OUR MISSION</span>
+                                <h3>Enable confident decisions</h3>
+                                <p>
+                                    To provide clear, actionable insights that empower investors and founders to make informed decisions with confidence.
+                                </p>
+                            </div>
+
+                            <div className="about-value-card">
+                                <span className="about-section-kicker">OUR VISION</span>
+                                <h3>Be a trusted transaction partner</h3>
+                                <p>
+                                    To be the most trusted partner for transaction advisory, diligence, and regulatory compliance in the ecosystem.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Why Choose Us */}
-            <section className="section" style={{ backgroundColor: 'var(--color-bg-light)' }}>
-                <div className="container">
-                    <h2 className="text-center" style={{ marginBottom: '40px' }}>Why Choose Diligent Capitals?</h2>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '30px' }}>
-                        <div className="text-center">
-                            <div style={{ fontSize: '2rem', marginBottom: '10px' }}>🎯</div>
-                            <h3>Investor-Focused</h3>
-                            <p>We understand what investors look for and structure our output accordingly.</p>
-                        </div>
-                        <div className="text-center">
-                            <div style={{ fontSize: '2rem', marginBottom: '10px' }}>⚡</div>
-                            <h3>Fast Turnaround</h3>
-                            <p>We move at the speed of your deal, ensuring no delays in closure.</p>
-                        </div>
-                        <div className="text-center">
-                            <div style={{ fontSize: '2rem', marginBottom: '10px' }}>🛡️</div>
-                            <h3>Compliance First</h3>
-                            <p>Zero tolerance for non-compliance, protecting your long-term interests.</p>
-                        </div>
+            <section className="section about-founders-section">
+                <div className="container about-shell">
+                    <div className="about-section-heading">
+                        <span className="about-section-kicker">LEADERSHIP</span>
+                        <h2>Our founders</h2>
+                        <p>
+                            Diligent Capitals combines complementary strengths across analytics, diligence execution,
+                            regulatory depth, and investor communication.
+                        </p>
+                    </div>
+
+                    <div className="about-founders-grid">
+                        {founders.map((founder) => (
+                            <div key={founder.name} className="about-founder-card">
+                                <div className="about-founder-badge">{founder.name.split(' ').map((part) => part[0]).join('')}</div>
+                                <h3>{founder.name}</h3>
+                                <p className="about-founder-role">{founder.role}</p>
+                                <p className="about-founder-exp">{founder.experience}</p>
+                                <p className="about-founder-text">{founder.expertise}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="section about-differentiators-section">
+                <div className="container about-shell">
+                    <div className="about-section-heading about-section-heading-centered">
+                        <span className="about-section-kicker">WHY CHOOSE US</span>
+                        <h2>Why teams work with Diligent Capitals</h2>
+                    </div>
+
+                    <div className="about-differentiators-grid">
+                        {differentiators.map((item, index) => (
+                            <div key={item.title} className="about-differentiator-card">
+                                <div className="about-differentiator-number">0{index + 1}</div>
+                                <h3>{item.title}</h3>
+                                <p>{item.text}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>

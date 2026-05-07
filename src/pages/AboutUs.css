@@ -1,0 +1,267 @@
+.about-page {
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.95), rgba(239, 242, 247, 0.9) 42%, rgba(232, 236, 242, 0.92) 100%);
+}
+
+.about-shell {
+    max-width: 1380px;
+}
+
+.about-hero {
+    padding-top: 28px;
+}
+
+.about-hero-card,
+.about-story-card,
+.about-value-card,
+.about-founder-card,
+.about-differentiator-card {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    border-radius: 28px;
+    box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+}
+
+.about-hero-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+    gap: 28px;
+    padding: 40px;
+}
+
+.about-hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-kicker,
+.about-section-kicker {
+    display: inline-block;
+    margin-bottom: 14px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #6b7280;
+}
+
+.about-hero-copy h1 {
+    font-size: clamp(3rem, 5vw, 4.8rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    max-width: 780px;
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+.about-hero-copy p,
+.about-story-card p,
+.about-value-card p,
+.about-section-heading p,
+.about-founder-text,
+.about-differentiator-card p {
+    color: #4b5563;
+    line-height: 1.8;
+}
+
+.about-hero-copy p {
+    max-width: 640px;
+    font-size: 1.06rem;
+    margin-bottom: 22px;
+}
+
+.about-hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.about-hero-tags span {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #f3f4f6;
+    color: #374151;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.about-hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-hero-frame {
+    width: 100%;
+    min-height: 420px;
+    padding: 18px;
+    border-radius: 24px;
+    background: linear-gradient(145deg, #fbfdff 0%, #edf2f7 100%);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-hero-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.about-story-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 24px;
+}
+
+.about-story-card {
+    padding: 34px;
+}
+
+.about-story-card h2,
+.about-section-heading h2 {
+    font-size: 2.4rem;
+    margin-bottom: 14px;
+    color: #111827;
+}
+
+.about-dark-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 24px;
+    margin-top: 24px;
+    border-radius: 999px;
+    background: #111827;
+    color: white;
+    font-weight: 700;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.about-dark-btn:hover {
+    background: #0b0f19;
+    transform: translateY(-2px);
+}
+
+.about-value-grid {
+    display: grid;
+    gap: 24px;
+}
+
+.about-value-card {
+    padding: 30px;
+}
+
+.about-value-card h3,
+.about-founder-card h3,
+.about-differentiator-card h3 {
+    font-size: 1.5rem;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.about-founders-section,
+.about-differentiators-section {
+    padding-top: 0;
+}
+
+.about-section-heading {
+    margin-bottom: 28px;
+}
+
+.about-section-heading p {
+    max-width: 760px;
+}
+
+.about-section-heading-centered {
+    text-align: center;
+}
+
+.about-section-heading-centered p {
+    margin: 0 auto;
+}
+
+.about-founders-grid,
+.about-differentiators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+}
+
+.about-founder-card,
+.about-differentiator-card {
+    padding: 28px;
+}
+
+.about-founder-badge,
+.about-differentiator-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    margin-bottom: 18px;
+    background: #111827;
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.about-founder-role {
+    color: #111827;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.about-founder-exp {
+    color: #6b7280;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+@media (max-width: 1100px) {
+    .about-hero-card,
+    .about-story-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding-top: 18px;
+    }
+
+    .about-hero-card,
+    .about-story-card,
+    .about-value-card,
+    .about-founder-card,
+    .about-differentiator-card {
+        padding: 24px;
+        border-radius: 22px;
+    }
+
+    .about-hero-card {
+        gap: 22px;
+    }
+
+    .about-hero-copy h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-story-card h2,
+    .about-section-heading h2 {
+        font-size: 2rem;
+    }
+
+    .about-hero-frame {
+        min-height: 300px;
+    }
+
+    .about-dark-btn {
+        width: 100%;
+    }
+}

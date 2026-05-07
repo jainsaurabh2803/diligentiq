@@ -142,17 +142,6 @@ const Home = () => {
                                 </div>
                             ))}
                         </div>
-
-                        <div className="home-bottom-cta">
-                            <div>
-                                <h3>Need a tailored scope?</h3>
-                                <p>
-                                    Tell us where you are in the transaction or planning cycle, and we’ll suggest the right diligence,
-                                    reporting, or financial planning path.
-                                </p>
-                            </div>
-                            <Link to="/about-us" className="home-dark-btn home-dark-btn-compact">Meet the team</Link>
-                        </div>
                     </section>
                 </div>
             </section>
