@@ -29,6 +29,8 @@ function App() {
           <Route path="about-us" element={<AboutUs />} />
           <Route path="contact" element={<Contact />} />
           <Route path="services" element={<ServicesOverview />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="terms-of-service" element={<TermsOfService />} />
 
           {/* Specific Service Routes */}
           <Route path="services/transaction-regulatory-support" element={<TransactionRegulatory />} />
