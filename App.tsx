@@ -10,6 +10,8 @@ import Footer from './components/Footer';
 import ServiceModal from './components/ServiceModal';
 import AboutTeaser from './components/AboutTeaser';
 import AboutPage from './pages/About';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 import { SERVICE_CATEGORIES } from './constants';
 import type { Service } from './types';
@@ -50,6 +52,8 @@ const App: React.FC = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<AboutPage />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-of-service" element={<TermsOfService />} />
     </Routes>
   );
 };

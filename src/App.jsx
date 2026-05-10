@@ -17,6 +17,8 @@ import StrategicAlliances from './pages/transaction-regulatory/StrategicAlliance
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import ServicesOverview from './pages/ServicesOverview';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 function App() {
   return (
